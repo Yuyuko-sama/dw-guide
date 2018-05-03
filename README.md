@@ -20,9 +20,9 @@ Demoros: Hit or not hit the dice in a certain color
 
 in /8 or /proxy chat, not in whisper chat anymore
 
-type dw, !dw or /dw to enable(default) or disable this module
+type dw or !dw to enable(default) or disable this module
 
-type dw.party, !dw.party or /dw.party to switch the call out message to yourself only(default) or party.
+type dw.party or !dw.party to switch the call out message to yourself only(default) or party.
 
 
 

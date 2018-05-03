@@ -29,19 +29,17 @@ module.exports = function DWGuide(dispatch) {
 	let count=0;
 	let circlecount=0;
 	
-	command.add(['dw','!dw','\/dw'], () => {
+	command.add(['dw','!dw'], () => {
 		enabled = !enabled;
-		sendMessage((enabled ? 'DW-guide enabled' : 'DW-guide disabled'));
+		command.message('DW-Guide '+(enabled ? 'enabled' : 'disabled') + '.');
 	});
 	
-	command.add(['dw.party','!dw.party','\/dw.party'], () => {
+	command.add(['dw.party','!dw.party'], () => {
 		sendToParty = !sendToParty;
-		sendMessage((sendToParty ? 'Messages will be sent to the party' : 'Only you will see messages'));
+		command.message((sendToParty ? 'Messages will be sent to the party' : 'Only you will see messages'));
 	});
 	
 	function sendMessage(msg) {
-		if (!enabled) return;
-		
 		if (sendToParty) {
 			dispatch.toServer('C_CHAT', 1, {
 				channel: 21, //21 = p-notice, 1 = party
