@@ -42,7 +42,7 @@ module.exports = function DWGuide(mod) {
                 type: 42,
 				chat: 0,
 				channel: 27,
-                message: msg,
+                message: `<font color="#ffff00">${msg}</font>`,
             });
         }       
     }
