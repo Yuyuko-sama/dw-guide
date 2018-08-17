@@ -1,6 +1,8 @@
 # DW-Guide
 
-Call out mechanics to yourself or the party
+Original mod by YunfeiG.
+
+Call out mechanics to yourself or the party.
 
 ## Call out messages:
 
@@ -16,14 +18,6 @@ Demoros: Laser
 
 Demoros: Hit or not hit the dice in a certain color
 
-## How to use this mod
-
-in /8 or /proxy chat, not in whisper chat anymore
-
-type dw or !dw to enable(default) or disable this module
-
-type dw.party or !dw.party to switch the call out message to yourself only(default) or party.
-
-
-
-Last Updated: May 3rd, 2018
+## Commands:
+`dw` - enable (default) or disable this module
+`dw party` - toggle calling out messages to yourself only (default) or party
