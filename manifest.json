@@ -1,13 +1,16 @@
 {
-    "files": {
-        "module.json": "bc87a399113c6ff986f637e2b56d19032c9b13dfe4907cc1b56596eeafde6c0f",
-        "index.js": "d5088bf64581224d16c1477ee7d7611b9b6ba792eb1b0b709f7b4bf1f5003646",
-        "settings_migrator.js": "4cf2cdf69437ca275cf61c0886786425f53d7dab762170efa41f2c8e834c03c3"
-    },
-    "defs": {
-        "S_BOSS_GAGE_INFO": 3,
-        "S_ACTION_STAGE": [6, 7, 8],
-        "S_SPAWN_NPC": 9,
-        "S_DESPAWN_NPC": 3
-    }
+	"files": {
+		"README.md": "496683a36f7d8909627aa884a4aaee594a0d4fac2deaeb1a99d8366515c52f21",
+		"index.js": "1c3fba18394be2741555c1c00e20d5471a993d25683570ca20ef640e3458b0e0",
+		"module.json": "64cad2ef278bd3b1892c98cd45a4c876b91b07f7da0b0c421226883f7ac4f08f",
+		"settings_migrator.js": "4cf2cdf69437ca275cf61c0886786425f53d7dab762170efa41f2c8e834c03c3"
+	},
+	"defs": {
+		"C_CHAT": 1,
+		"S_ACTION_STAGE": [6,7,8],
+		"S_BOSS_GAGE_INFO": 3,
+		"S_DESPAWN_NPC": 3,
+		"S_DUNGEON_EVENT_MESSAGE": 2,
+		"S_SPAWN_NPC": 9
+	}
 }

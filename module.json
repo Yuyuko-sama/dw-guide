@@ -6,5 +6,5 @@
         "settingsFile": "config.json",
         "settingsMigrator": "settings_migrator.js"
     },
-    "servers": ["https://raw.githubusercontent.com/hackerman-caali/dw-guide/master/"]
+    "servers": ["https://raw.githubusercontent.com/Yuyuko-sama/dw-guide/master/"]
 }

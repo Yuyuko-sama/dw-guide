@@ -3,9 +3,9 @@ const BANDERSNATCH = 46601;     // Bandersnatch
 const DEMOROS = 46602;          // Demoros
 
 const dices = {
-    0: {0: 'Hit ALL', 1: 'Don\'t hit RED', 2: 'Hit RED'},       // red dice
-    1: {0: 'Hit ALL', 1: 'Don\'t hit BLUE', 2: 'Hit BLUE'},     // blue dice
-    2: {0: 'Hit ALL', 1: 'Don\'t hit WHITE', 2: 'Hit WHITE'},   // white dice
+    0: {0: '打全部', 1: '别打红', 2: '只打红'},       // red dice
+    1: {0: '打全部', 1: '别打蓝', 2: '只打蓝'},     // blue dice
+    2: {0: '打全部', 1: '别打白', 2: '只打白'},   // white dice
 };
 
 module.exports = function DWGuide(mod) {
@@ -26,7 +26,7 @@ module.exports = function DWGuide(mod) {
                 break;
             case 'party':
                 mod.settings.sendToParty = !mod.settings.sendToParty;
-                mod.command.message(mod.settings.sendToParty ? 'Messages will be sent to the party' : 'Only you will see messages');
+                mod.command.message(mod.settings.sendToParty ? 'Messages将会被发送到组队频道' : '只有你能看到Messages');
                 break;
         }
     });
@@ -38,14 +38,15 @@ module.exports = function DWGuide(mod) {
                 message: msg,
             });
         } else {
-            mod.send('S_CHAT', 1, {
-                channel: 21, //21 = p-notice, 1 = party
-                authorName: mod.options.niceName,
+            mod.send('S_DUNGEON_EVENT_MESSAGE', 2, {
+                type: 42,
+				chat: 0,
+				channel: 27,
                 message: msg,
             });
         }       
     }
-    
+
     mod.hook('S_BOSS_GAGE_INFO', 3, (event) => {
         if (!mod.settings.enabled)
             return;
@@ -73,14 +74,14 @@ module.exports = function DWGuide(mod) {
                     case 1313: // Blue inner explosion (pre 50%)
                     case 1315: // Red inner explosion (post 50%)
                     case 1317: // Blue inner explosion (post 50%)
-                        sendMessage('OUT OUT OUT');
+                        sendMessage('出↓！！！');
                         circlecount = 0;
                         break;
                     case 1312: // Red outer explosion (pre 50%)
                     case 1314: // Blue outer explosion (pre 50%)
                     case 1316: // Red outer explosion (post 50%)
                     case 1318: // Blue outer explosion (post 50%)
-                        sendMessage('IN IN IN IN');
+                        sendMessage('进↑！！！');
                         circlecount = 0;
                         break;
                     case 1306: // 1 orange circle (pre 50%)
@@ -108,7 +109,7 @@ module.exports = function DWGuide(mod) {
                     case 1113:
                     case 2113:
                         if(count === 0)
-                            sendMessage('<font color = "#ff3300">LASER!!!!!!</font>');
+                            sendMessage('激光!!!!!!');
                         count = (count + 1) % 4;
                         break;
                         
@@ -119,12 +120,12 @@ module.exports = function DWGuide(mod) {
                 
                     case 1311: // Blue Outer-inner explosion
                     case 1314: // Red Outer-inner explosion
-                        sendMessage('IN then OUT');
+                        sendMessage('内↑+外↓');
                         break;
                         
                     case 1312: // Red Inner-outer explosion
                     case 1313: // Blue Inner-outer explosion
-                        sendMessage('OUT then IN');
+                        sendMessage('外↓+内↑');
                         break;
                         
                     case 1303: // Red,Blue,White dice? mech
@@ -134,7 +135,7 @@ module.exports = function DWGuide(mod) {
                     // 1217 Blue circles, 3 times
                     case 1223: // Red circles, 3 times
                         if(count === 0)
-                            sendMessage('Double RED');
+                            sendMessage('红圈：两次伤害！');
                         count = (count + 1) % 3;
                         break;
                 }
