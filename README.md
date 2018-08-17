@@ -20,4 +20,5 @@ Demoros: Hit or not hit the dice in a certain color
 
 ## Commands:
 `dw` - enable (default) or disable this module
+
 `dw party` - toggle calling out messages to yourself only (default) or party
