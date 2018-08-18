@@ -34,7 +34,7 @@ module.exports = function DWGuide(mod) {
     function sendMessage(msg) {
         if (mod.settings.sendToParty) {
             mod.send('C_CHAT', 1, {
-                channel: 21, //21 = p-notice, 1 = party
+                channel: 1, //21 = p-notice, 1 = party
                 message: msg,
             });
         } else {
@@ -90,7 +90,7 @@ module.exports = function DWGuide(mod) {
                     case 1309: // 4 blue circles (pre 50%)
                     case 1310: // 5 red circles (pre 50%)
                         circlecount += (event.skill.id - 1306) + 1;
-                        sendMessage(`${circlecount} - ${(circlecount & 1) ? "odd - red" : "even - blue"}`);
+                        sendMessage(`${circlecount} - ${(circlecount & 1) ? "单数 - 红" : "双数 - 蓝"}`);
                         break;
                     case 1319: // 1 green circle (post 50%)
                     case 1320: // 2 green circles (post 50%)
@@ -98,7 +98,7 @@ module.exports = function DWGuide(mod) {
                     case 1322: // 4 green circles (post 50%)
                     case 1323: // 5 green circles (post 50%)
                         circlecount += (event.skill.id - 1319) + 1;
-                        sendMessage(`${circlecount} - ${(circlecount & 1) ? "odd - red" : "even - blue"}`);
+                        sendMessage(`${circlecount} - ${(circlecount & 1) ? "单数 - 红" : "双数 - 蓝"}`);
                         break;
                 }
                 break;
