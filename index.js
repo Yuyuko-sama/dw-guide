@@ -63,7 +63,7 @@ module.exports = function DWGuide(mod) {
             boss = null;
     });
     
-    mod.hook('S_ACTION_STAGE', 6, (event) => {
+    mod.hook('S_ACTION_STAGE', 7, (event) => {
         if (!mod.settings.enabled || !boss || !event.gameId.equals(boss.id))
             return;
         
