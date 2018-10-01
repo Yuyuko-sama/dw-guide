@@ -63,7 +63,7 @@ module.exports = function DWGuide(mod) {
             boss = null;
     });
     
-    mod.hook('S_ACTION_STAGE', 7, (event) => {
+    mod.hook('S_ACTION_STAGE', dispatch.base.majorPatchVersion >= 75 ? 8 : 7, (event) => {
         if (!mod.settings.enabled || !boss || !event.gameId.equals(boss.id))
             return;
         
