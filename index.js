@@ -143,7 +143,7 @@ module.exports = function DWGuide(mod) {
         }
     });
     
-    mod.hook('S_SPAWN_NPC', 10, (event) => {
+    mod.hook('S_SPAWN_NPC', 11, (event) => {
         if (!mod.settings.enabled || !boss || event.huntingZoneId !== DW)
             return;
         
